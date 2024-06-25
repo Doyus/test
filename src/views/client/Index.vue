@@ -96,6 +96,7 @@
                 {{ $lang.buttons.edit }}
               </el-button>
             </router-link>
+
             <router-link
               :to="{ name: 'clientSchedule', params: { id: props.row.pk } }"
               tag="span"

@@ -10,10 +10,12 @@
   "dependencies": {
     "axios": "^0.21.1",
     "clone": "^2.1.2",
+    "cnpm": "^9.2.0",
     "core-js": "^2.6.5",
     "date-format": "^2.1.0",
     "echarts": "^4.3.0",
     "element-ui": "^2.11.1",
+    "file-saver": "^2.0.5",
     "font-awesome": "^4.7.0",
     "jquery": "^3.5.0",
     "js-base64": "^2.5.1",
@@ -30,7 +32,8 @@
     "vue-echarts": "^4.0.4",
     "vue-router": "^3.1.2",
     "vuex": "^3.1.1",
-    "vuex-persist": "^2.1.1"
+    "vuex-persist": "^2.1.1",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.5",

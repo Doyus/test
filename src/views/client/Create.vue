@@ -84,8 +84,8 @@
 </template>
 <script>
 import PanelTitle from "../../components/PanelTitle";
-import { ip, port } from "../../utils/regex";
-
+// import { ip, port } from "../../utils/regex";
+import { port } from "../../utils/regex";
 export default {
   data() {
     return {

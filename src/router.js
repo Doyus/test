@@ -2,11 +2,11 @@ import Vue from "vue";
 import Router from "vue-router";
 import Layout from "./layout/Index.vue";
 import store from "./store";
-
+import {  createWebHistory } from 'vue-router'
 Vue.use(Router);
 
 const router = new Router({
-  // mode: 'history',
+  // history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/login",
@@ -85,7 +85,79 @@ const router = new Router({
           name: "taskStatus",
           component: () => import("./views/task/Status.vue"),
         },
+        {
+          path: "/tymonitor",
+          name: "tymonitorIndex",
+          component: () => import("./views/tymonitor/Monitor.vue"),
+        },
+        {
+          path: "/tymonitor/create",
+          name: "tymonitorCreate",
+          component: () => import("./views/tymonitor/Create.vue"),
+        },
+        {
+          path: "/xyresult",
+          name: "xyresultIndex",
+          component: () => import("./views/xyresult/Xyshow.vue"),
+        },
+        {
+          path: "/xyresult/create",
+          name: "xyresultCreate",
+          component: () => import("./views/xyresult/Create.vue"),
+        },
+        {
+          path: "/xyresult/detail",
+          name: "xyDetail",
+          component: () => import("./views/xyresult/Detail.vue"),
+        },
+        {
+          path: "/crawl",
+          name: "crawl",
+          component: () => import("./views/crawl/Serach.vue"),
+        },
+        {
+          path: "/crawl/detail",
+          name: "detail",
+          component: () => import("./views/crawl/detail.vue"),
+        },
+
+        {
+          path: "/pyspider",
+          name: "pyspider",
+          component: () => import("./views/pyspider/Index.vue"),
+        },
+        {
+          path: "/create_task",
+          name: "create_task",
+          component: () => import("./views/create_task/Index.vue"),
+        },
+        {
+          path: "/task_list",
+          name: "task_list",
+          component: () => import("./views/create_task/task_list.vue"),
+        },
+        {
+          path: "/task_run",
+          name: "task_run",
+          component: () => import("./views/create_task/task_run.vue"),
+        },
+        {
+          path: "/task_client/:id/edit",
+          name: "CreateTaskEdit",
+          component: () => import("./views/create_task/Edit.vue"),
+        },
+        {
+          path: "/task_client_result/:id/result",
+          name: "CreateTaskResult",
+          component: () => import("./views/create_task/result.vue"),
+        },
+        {
+          path: "/task_client_detail/:id/result",
+          name: "CreateTaskDetail",
+          component: () => import("./views/create_task/detail.vue"),
+        },
       ],
+      
     },
   ],
   scrollBehavior(to, from, savedPosition) {

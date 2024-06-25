@@ -7,7 +7,6 @@ import enLocale from "element-ui/lib/locale/lang/en";
 import locale from "element-ui/lib/locale";
 
 Vue.use(Vuex);
-
 const vuexPersist = new VuexPersist({
   key: "gerapy",
   storage: localStorage,
@@ -85,9 +84,38 @@ export default new Vuex.Store({
         projectVersion: "/api/client/{id}/project/{name}/version",
         projectDeploy: "/api/client/{id}/project/{name}/deploy",
       },
+      tymonitor: {
+        index: '/api/tymonitor',
+        status: "/api/tymonitor/{id}/status",
+        create: "/api/tymonitor/create",
+        remove: "/api/tymonitor/{id}/remove",
+      },
+
+      xyresult: {
+        xyresult: '/api/xymonitor',
+        xynavdata: '/api/xymonitor/keyword',
+        xycreate: '/api/xymonitor/create',
+        xyalldata: '/api/xymonitor/alldata',
+        xydetail: '/api/xymonitor/xydetail',
+        xyedit: '/api/xymonitor/xyedit',
+      },
+
       util: {
         render: "/api/render",
       },
+      crawl: {
+        index: '/spider/searchQuery',
+        detail: "/spider/detail",
+      },
+      cteate_task: {
+        task_List:'/api/queryTasks',
+        show: "/api/CreateTaskShow/{id}",
+        result: "/api/CreateTaskResult/{id}",
+        status: "/api/CreateTaskStatus/{id}",
+        update: "/api/CreateTaskUpdate/{id}",
+        remove: "/api/CreateTaskRemove/{id}",
+        detail: "/api/CreateTaskDetail/{id}",
+      }
     },
   },
   mutations: {
@@ -110,6 +138,9 @@ export default new Vuex.Store({
     // user
     setUser(state, user) {
       state.auth.user = user;
+    },
+    setFirstName(state, username) {
+      state.auth.username = username;
     },
     clearUser(state) {
       state.auth.user = null;
@@ -143,6 +174,9 @@ export default new Vuex.Store({
     },
     user: (state) => {
       return state.auth.user;
+    },
+    username: (state) => {
+      return state.auth.username;
     },
   },
   plugins: [vuexPersist.plugin],

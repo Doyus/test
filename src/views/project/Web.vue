@@ -94,8 +94,7 @@ $.fn.extend({
     return path;
   },
   getXPathSelector: function() {
-    var path,
-      node = this;
+    var node = this;
     if (node.id) return "//*[@id='" + node.id + "']";
     var position,
       $node = this.first(),
@@ -176,7 +175,6 @@ export default {
         event.preventDefault();
         event.stopPropagation();
         let target = $(event.target);
-        console.log(getCSSSelector(target));
         that.cssSelector = getCSSSelector(target);
         that.xpathSelector = getXPathSelector(target);
 

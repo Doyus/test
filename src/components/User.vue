@@ -1,7 +1,7 @@
 <template>
   <div id="user">
     <el-dropdown size="mini" split-button type="primary">
-      <span>{{ $store.getters.user }}</span>
+      <span>{{ $store.getters.username }}</span>
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item
           ><span @click="onLogout">{{
@@ -38,4 +38,6 @@ export default {
     border-right: none;
   }
 }
+
+
 </style>

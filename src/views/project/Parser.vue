@@ -159,7 +159,7 @@
                   follow.requests.length
                 }}</el-button>
               </p>
-              <div v-for="(request, requestIndex) in follow.requests">
+              <div v-for="(request, requestIndex) in follow.requests" :key="requestIndex">
                 <div class="follow-request">
                   <el-form-item class="inline">
                     <el-button type="primary" size="mini">{{
@@ -206,7 +206,7 @@
                   follow.items.length
                 }}</el-button>
               </p>
-              <div class="follow-item" v-for="item in follow.items">
+              <div class="follow-item" v-for="item in follow.items"  :key="item.id">
                 <el-form-item
                   v-for="(value, key) in item"
                   :key="key"

@@ -2,7 +2,7 @@ import axios from "axios";
 import router from "./router";
 import store from "./store";
 
-axios.defaults.timeout = 8000;
+axios.defaults.timeout = 30000;
 
 // set global authorization token
 axios.interceptors.request.use(

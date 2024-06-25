@@ -105,9 +105,19 @@ export default {
           this.$http
             .post(this.$store.state.url.user.auth, this.form)
             .then(({ data: data }) => {
+              // eslint-disable-next-line  
+              console.log("用户数据",data)
               let token = data.token;
+              let user = data.user;
+              let first_name = data.first_name;
               this.$store.commit("setToken", token);
-              this.$store.commit("setUser", this.form.username);
+              this.$store.commit("setUser", user);
+              this.$store.commit("setFirstName", first_name);
+              // 将 first_name 存储或使用
+            //   if (first_name) {
+            //     this.$store.commit("setFirstName", first_name);
+            //     // 或者直接使用 first_name 值进行相应操作
+            // }
               this.$router.push({ path: "/home" });
               this.loading = false;
             })

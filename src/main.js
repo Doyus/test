@@ -19,6 +19,13 @@ Vue.component("v-chart", ECharts);
 
 Vue.config.productionTip = false;
 
+const globalConfig = {
+  backendServerUrl: 'http://172.167.0.41:5005/pyspider/index',
+  // cteateServerUrl: 'http://172.167.0.41:5173/src/assets/html/create_task.html?id=-1'
+  cteateServerUrl: '/api/cteateTask?id=-1',
+  openServerUrl: '/api/cteateTask?id='
+}
+
 Vue.use(VueAxios, http);
 
 Vue.mixin({
@@ -35,6 +42,9 @@ Vue.mixin({
 });
 
 new Vue({
+  data: {
+    globalConfig
+  },  
   router,
   store,
   render: (h) => h(App),

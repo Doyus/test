@@ -1,7 +1,7 @@
 <template>
   <div>
     <footer class="footer" v-once>
-      Copyright &copy; {{ getYear }} Gerapy All Rights Reserved.
+      Copyright &copy; {{ getYear }} 国信创新 All Rights Reserved.
     </footer>
   </div>
 </template>

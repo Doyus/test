@@ -11,7 +11,9 @@
 			</transition>
 		</section>
 	</div>
+
 </template>
+
 
 <script>
 
@@ -23,7 +25,12 @@
 		components: {
 			Wrapper,
 			Left,
-		}
+		},
+		data() {
+			return {
+				isLeftVisible: true 
+					}
+			}
 	}
 
 </script>

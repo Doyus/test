@@ -190,7 +190,6 @@
       ></storage>
     </el-form-item>
     <!-- 存储结束 -->
-
     <!-- 代理开始 -->
     <!--<el-form-item>-->
     <!--<proxy :proxy="spider.proxy" :onAddInput="onAddInput" :onDeleteInput="onDeleteInput"></proxy>-->
@@ -272,8 +271,8 @@ import Rules from "./Rules";
 import Extractors from "./Extractors";
 import Storage from "./Storage";
 import Parser from "./Parser";
-import Proxy from "./Proxy";
-import Cookies from "./Cookies";
+// import Proxy from "./Proxy";
+// import Cookies from "./Cookies";
 import CodeEditor from "../../components/CodeEditor";
 
 export default {
@@ -303,8 +302,8 @@ export default {
     Extractors,
     Storage,
     Parser,
-    Proxy,
-    Cookies,
+    // Proxy,
+    // Cookies,
     CodeEditor,
   },
 };
