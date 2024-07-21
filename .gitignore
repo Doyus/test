@@ -1,39 +1,34 @@
-*.py[cod]
-data/*
-.venv
-.idea
-# C extensions
-*.so
-
-# Packages
-*.egg
-*.egg-info
+node_modules
+.DS_Store
 dist
-build
-eggs
-parts
-bin
-var
-sdist
-develop-eggs
-.installed.cfg
-lib
-lib64
-__pycache__
+.cache
+.turbo
 
-# Installer logs
-pip-log.txt
+tests/server/static
+tests/server/static/upload
 
-# Unit test / coverage reports
-.coverage
-.tox
-nosetests.xml
+.local
+# local env files
+.env.local
+.env.*.local
+.eslintcache
 
-# Translations
-*.mo
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# Mr Developer
-.mr.developer.cfg
-.project
-.pydevproject
+# Editor directories and files
 .idea
+# .vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+package-lock.json
+pnpm-lock.yaml
+
+.history
