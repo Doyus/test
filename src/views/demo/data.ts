@@ -1,8 +1,8 @@
 /**
  * -*- coding: utf-8 -*-
- * time: 2022/5/26 23:54
- * author: 臧成龙
- * QQ: 939589097
+ * time: 2024/5/26 23:54
+ *
+ *
  */
 import { BasicColumn } from '/@/components/Table';
 import { FormSchema } from '/@/components/Table';
