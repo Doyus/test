@@ -65,8 +65,8 @@ export default {
     signUpFormTitle: '注册',
     forgetFormTitle: '重置密码',
 
-    signInTitle: 'Python 后台管理系统',
-    signInDesc: '后端使用Django Ninja 开发',
+    signInTitle: '灵犀智采',
+    signInDesc: '元博网-数据采集管理平台',
     policy: '我同意xxx隐私政策',
     scanSign: `扫码后点击"确认"，即可完成登录`,
 

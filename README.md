@@ -2,7 +2,7 @@
 
 [![license](https://img.shields.io/github/license/anncwb/vue-vben-admin.svg)](LICENSE)
 
-<h1>Vue Gxadmin</h1>
+<h1>元博网-灵犀智采</h1>
 </div>
 
 **English** | [中文](./README.zh-CN.md)

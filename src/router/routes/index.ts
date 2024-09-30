@@ -38,6 +38,18 @@ export const LoginRoute: AppRouteRecordRaw = {
   },
 };
 
+
+export const CmsDetailRoute: AppRouteRecordRaw = {
+  path: '/detail/:id',
+  name: 'Detail',
+  component: () => import('/@/views/spiderdb/cms_data/Detail.vue'),
+  meta: {
+    title: "cms详情页",
+  },
+};
+
+
+
 // Basic routing without permission
 // 未经许可的基本路由
 export const basicRoutes = [

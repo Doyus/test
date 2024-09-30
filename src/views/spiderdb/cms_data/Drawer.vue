@@ -57,9 +57,6 @@
       async function handleSubmit() {
         try {
           const values = await validate();
-          console.log("3333", values);
-          // const { isUpdate1, ...submitValues } = values;
-          // console.log("2222", isUpdate1);
           setDrawerProps({ confirmLoading: true });
           await createOrUpdate(values, unref(isUpdate));
           closeDrawer();

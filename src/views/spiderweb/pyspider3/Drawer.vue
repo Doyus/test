@@ -37,6 +37,7 @@
         await resetFields();
         setDrawerProps({ confirmLoading: false });
         isUpdate.value = !!data?.isUpdate;
+        console.log("11111", isUpdate.value);
         if (unref(isUpdate)) {
           await setFieldsValue({
             ...data.record,

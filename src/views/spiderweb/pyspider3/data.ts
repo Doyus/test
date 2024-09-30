@@ -222,12 +222,6 @@ export const searchFormSchema: FormSchema[] = [
 // 添加表单字段
 export const formSchema: FormSchema[] = [
   {
-    field: 'isUpdate',
-    label: '是否更新',
-    component: 'Switch',
-    show: false, // 如果不需要在表单中显示
-  },
-  {
     field: 'id',
     label: 'id',
     component: 'Input',
@@ -244,10 +238,7 @@ export const formSchema: FormSchema[] = [
     label: t('common.websiteInfo.mainHost'),
     required: true,
     component: 'Input',
-    ifShow: ({ values }) => {
-      console.log('ifShow values:', values); // 添加日志
-      return values.isUpdate;
-    },
+    ifShow: ({ values }) => values.isUpdate, // 添加时候不现实此字段,由程序根据site_url生成
   },
   {
     field: 'site_name',
