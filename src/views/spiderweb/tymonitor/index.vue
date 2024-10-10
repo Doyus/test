@@ -4,38 +4,12 @@
       <template #tableTitle>
         <Space style="height: 40px">
           <a-button
-            type="primary"
-            v-auth="['demo:add']"
-            preIcon="ant-design:plus-outlined"
-            @click="handleCreate"
-          >
-            {{ t('common.addText') }}
-          </a-button>
-          <a-button
-            type="error"
-            v-auth="['demo:delete']"
-            preIcon="ant-design:delete-outlined"
-            @click="handleBulkDelete"
-          >
-            {{ t('common.delText') }}
-          </a-button>
-          <!-- <BasicUpload
-            :maxSize="20"
-            :maxNumber="1"
-            @change="handleChange"
-            class="my-5"
-            type="warning"
-            :text="t('common.importText')"
-            v-auth="['demo:update']"
-          /> -->
-          <!-- <a-button
-            type="success"
-            v-auth="['demo:update']"
-            preIcon="carbon:cloud-download"
-            @click="handleExportData"
-          >
-            {{ t('common.exportText') }}
-          </a-button> -->
+                type="primary"
+                preIcon="ant-design:plus-outlined"
+                @click="handleCreate"
+        >
+            {{ t('common.task_name.create_task') }}
+        </a-button>
         </Space>
       </template>
       <template #bodyCell="{ column, record }">
@@ -60,14 +34,14 @@
                   confirm: handleDelete.bind(null, record.id),
                 },
               },
-              {
-                type: 'button',
-                color: 'warning',
-                tooltip: t('common.websiteInfo.addData'),
-                icon: 'ant-design:plus-square-outlined',
-                auth: ['menu:update'],
-                onClick: handleCreate.bind(null, record),
-              },
+              // {
+              //   type: 'button',
+              //   color: 'warning',
+              //   tooltip: t('common.websiteInfo.addData'),
+              //   icon: 'ant-design:plus-square-outlined',
+              //   auth: ['menu:update'],
+              //   onClick: handleCreate.bind(null, record),
+              // },
             ]"
           />
         </template>

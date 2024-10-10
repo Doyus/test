@@ -3,7 +3,8 @@
  * @Description: Multi-language switching component
 -->
 <template>
-  <Dropdown
+  <!-- 切换中英文 -->
+  <!-- <Dropdown
     placement="bottom"
     :trigger="['click']"
     :dropMenuList="localeList"
@@ -15,7 +16,7 @@
       <Icon icon="ion:language" />
       <span v-if="showText" class="ml-1">{{ getLocaleText }}</span>
     </span>
-  </Dropdown>
+  </Dropdown> -->
 </template>
 <script lang="ts" setup>
   import type { LocaleType } from '/#/config';

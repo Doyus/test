@@ -8,14 +8,34 @@ import { BasicColumn } from '/@/components/Table';
 import { FormSchema } from '/@/components/Table';
 import { useI18n } from '/@/hooks/web/useI18n';
 import { h } from 'vue';
+import { useRouter } from 'vue-router';
 import { useGo } from '/@/hooks/web/usePage';
-// import DetailPage from '/@/views/index.vue';
+import { RouterLink } from 'vue-router';
+
 
 const { t } = useI18n();
 
 export const columns: BasicColumn[] = [
 
     
+  // {
+  //   title: t('common.cms_data.aus_id'),
+  //   dataIndex: 'aus_id',
+  //   width: 200,
+  //   customRender: ({ text, record }) => {
+  //     return {
+  //       children: h(
+  //           'a',
+  //           {
+  //             href: record.comments,
+  //             target: '_blank',
+  //             rel: 'noopener noreferrer'
+  //           },
+  //           text
+  //       )
+  //     };
+  //   }
+  // },
   {
     title: t('common.cms_data.aus_id'),
     dataIndex: 'aus_id',
@@ -26,9 +46,8 @@ export const columns: BasicColumn[] = [
         children: h(
           'button',
           {
+            onClick: () => go({ path: `/detail/${record.aus_id}` }), // 根据需要修改路径
             // onClick: () => go({ name: 'Detail', params: { id: record.aus_id } }), // 根据需要修改路径
-            // onClick: () => go({ path: record.comments }), // 根据需要修改路径
-            onClick: () => go({ path: 'detail/'+ record.aus_id }), // 根据需要修改路径
             style: { background: 'none', border: 'none', color: 'blue', cursor: 'pointer' }
           },
           text
@@ -36,7 +55,7 @@ export const columns: BasicColumn[] = [
       };
     }
   },
-  
+
   {
     title: t('common.cms_data.main_host'),
     dataIndex: 'main_host',
@@ -48,7 +67,7 @@ export const columns: BasicColumn[] = [
   //   width: 180,
   // },
   {
-    title: t('common.task_name.title'),
+    title: t('common.cms_data.title'),
     dataIndex: 'title',
     width: 200,
     customRender: ({ text, record }) => {

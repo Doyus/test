@@ -11,12 +11,21 @@ import { h } from 'vue';
 
 // import { getAreaTextByCode } from '/@/components/Form/src/utils/Area';
 const { t } = useI18n();
+function getClassName(recode){
+  var combined=recode.website_name+'_'+recode.class_name
+  if (combined.length < 5) {
+    return recode.site_name;
+  }
+  return combined
+}
 export const crawlStatusMap = {
   0: t('common.task_name.crawlStatusStop'),
   1: t('common.task_name.crawlStatusRunning'),
   2: t('common.task_name.crawlStatusEnd'),
   '-1': t('common.task_name.crawlStatusSiteStart'),
-  3: t('common.task_name.crawlStatusSiteEdit')
+  3: t('common.task_name.crawlStatusSiteEdit'),
+  4: t('common.task_name.crawlStatusSiteError'),
+  5: t('common.task_name.crawlStatusSiteNotData')
 };
 export const columns: BasicColumn[] = [
   {
@@ -38,7 +47,7 @@ export const columns: BasicColumn[] = [
               target: '_blank',
               rel: 'noopener noreferrer'
             },
-            text
+            getClassName(record)
         )
       };
     }
@@ -50,15 +59,9 @@ export const columns: BasicColumn[] = [
 
   },
   {
-    title: t('common.task_name.class_name'),
-    dataIndex: 'class_name',
-    width: 100,
-  },
-  {
     title: t('common.task_name.crawl_start_time'),
     dataIndex: 'crawl_start_time',
     width: 100,
-
   },
   {
     title: t('common.task_name.crawl_end_time'),
@@ -102,6 +105,12 @@ export const searchFormSchema: FormSchema[] = [
     colProps: { span: 4 },
   },
   {
+    field: 'principal',
+    label: t('common.task_name.principal'),
+    component: 'Input',
+    colProps: { span: 4 },
+  },
+  {
     field: 'status',
     label: t('common.task_name.status'),
     component: 'Select',
@@ -112,6 +121,8 @@ export const searchFormSchema: FormSchema[] = [
         { label: t('common.task_name.crawlStatusEnd'), value: 2 },
         { label: t('common.task_name.crawlStatusSiteStart'), value: -1 },
         { label: t('common.task_name.crawlStatusSiteEdit'), value: 3 },
+        { label: t('common.task_name.crawlStatusSiteError'), value: 4 },
+        // { label: t('common.task_name.crawlStatusSiteNotData'), value: 5 },
       ],
     },
     colProps: { span: 4 },
@@ -148,7 +159,7 @@ export const formSchema: FormSchema[] = [
   {
     field: 'remark',
     label: t('common.task_name.remark'),
-    required: true,
+    required: false,
     component: 'Input',
   },
   {
@@ -168,10 +179,24 @@ export const formSchema: FormSchema[] = [
     label: t('common.task_name.crawl_interval'),
     required: true,
     component: 'Input',
-      ifShow: ({ values }) => {
-          console.log('ifShow values:', values); // 添加日志
-          return values.isUpdates;
-      },
+  },
+
+  {
+    field: 'crawl_interval_type',
+    label: t('common.task_name.crawl_interval_type'),
+    required: true,
+    component: 'Select',
+    componentProps: {
+      options: [
+        { label: '间隔', value: 1 },
+        // { label: 'cron表达式', value: 2},
+        // { label: '时间（单次执行）', value: 3},
+
+      ],
+    },
+    ifShow: ({ values }) => {
+      return values.isUpdate;
+    },
   },
   {
     field: 'run_dp',
